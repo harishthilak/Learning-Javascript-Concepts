@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let isavailable = false;
+        let isnotavailable = true;
+
+        if (isavailable){
+            console.log("The item is avaibale");
+
+        }
+        else {
+            console.log("The item is not available");
+        }
+
+        let a = 10;
+        let b = 20;
+        console.log("The value of a is less than b",a < b);
+
+        let c = null;
+        console.log(typeof c);//JavaScript bug: typeof null === "object" (historical mistake in the language).
+
+        let d = undefined;
+        console.log(d);
+        console.log(typeof d);
+
+        //numbers
+        let e = 123;
+        let f = 12.3;
+        let g = 1/0;
+        let h = 0/0;
+
+        console.log(typeof e,typeof f,typeof g,typeof h);
+        console.log("The value of g",g);
+        console.log("the value of h ",h);
+
+        //bigint
+        let i = 123456789098765432n;
+        console.log(typeof i);
+
+        //string
+        let j = "Harish";
+        let k = "Hello";
+        let l = `hi and ${k},mr.${j}`;
+        console.log(l); 
+
+        //symbol - Symbols are useful for private object properties
+        let m = Symbol("id");
+        let n = Symbol("id");
+
+        const user = {
+            name : "Harish",
+            [m] : "Hate Barcelona"
+        };
+
+        console.log(user.name);
+        console.log(user[m]);
+        console.log(Object.values(user));// ["name"] — symbol not shown
+        console.log(JSON.stringify(user));// {"name":"Harish"} — symbol is hidden
+        console.log(typeof m,typeof n); 
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

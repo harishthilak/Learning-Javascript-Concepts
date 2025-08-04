@@ -1,0 +1,45 @@
+17.0.1 Prototype:
+if we declare a function named human the type of hman is function. Every function gets a .prototype object automatically.
+that prototype is provides the properties and methods shared. .constructor of that prototype points back to the original function.
+
+17.0.2 Prototype on Object Literal
+Even plain objects (created via {}) secretly use Object.prototype.
+So, they inherit built-in methods like .toString(), .hasOwnProperty(), etc
+
+normally prototype acts as a template we can use the template by calling it for example i want to create 1000 cats 
+const cat1 = {
+  name: "Cat1",
+  energy: 2,
+  sleep() { this.energy++; },
+  eat() { this.energy += 2; }
+};
+
+const cat2 = {
+  name: "Cat2",
+  energy: 3,
+  sleep() { this.energy++; },
+  eat() { this.energy += 2; }
+};
+
+// ...998 more
+Each object has its own copy of sleep() and eat() functions.
+That's 1000 copies of the same methods in memory = inefficient.
+
+function Cat(name, energy) {
+  this.name = name;
+  this.energy = energy;
+}
+
+Cat.prototype.sleep = function () {
+  this.energy++;
+};
+
+Cat.prototype.eat = function () {
+  this.energy += 2;
+};
+
+const cat1 = new Cat("Felix", 1);
+const cat2 = new Cat("Tom", 3);
+
+Only one shared copy of .sleep() and .eat() in memory.
+

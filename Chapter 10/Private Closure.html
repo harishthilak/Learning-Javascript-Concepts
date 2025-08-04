@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <H2>Closure as a Private Variable Container</H2>
+    <script>
+        function bank(Ib){
+            let balance = Ib;
+
+            return {
+                deposit (amount) {
+                    balance += amount;
+                    console.log("Deposited.",amount);
+                },
+                Knowbalance(){
+                    console.log("Current Balance",balance);
+                }
+
+            };
+        }
+
+        let acc = bank(10000);
+        acc.deposit(2000);
+        acc.Knowbalance();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

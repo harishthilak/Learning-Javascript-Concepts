@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let firstname = "harish";
+        let Initial = "t";
+        let proper = firstname[0].toUpperCase()+firstname.slice(1).toLowerCase();
+
+        let combine = Initial.toUpperCase() + "." + proper;
+
+        console.log(combine);
+
+        const clean = "  hello Bro"
+        .trim()
+        .toUpperCase()
+        .substr(0,9);
+
+        console.log(clean);
+
+        let name = "Harish";
+        let alert = 1;
+
+        let message = `Hello ${name},there ${alert === 1 ? "is" : "are"} ${alert} alert${alert === 1 ? "" : "s"}`;
+
+        console.log(message);
+
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

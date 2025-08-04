@@ -1,0 +1,30 @@
+Scope Overview
+Scope means where your variables live and where you can access them
+Global Scope - Outside all {} Anywhere in the program
+Block Scope - Inside {} like if, for, {} - Only within those {} brackets
+Function Scope - Inside a function - 	Only inside that function
+
+Variable Definitions
+Case Sensitivity,Declaring Variables - var – older way, hoisted, function-scoped,let – block-scoped, modern, recommended,const – block-scoped + cannot be reassigned.
+
+Scope Rules Summary
+1. Global Scope: We can decleared the variable outside the function we can able to access within the function.
+var a = 10;
+function show() {
+  console.log(a); // accessible
+}
+2. Function Scope: we can only able to access within the function
+function test() {
+  let b = 20;
+}
+console.log(b); //not accessible
+
+3. Block Scope: we can able to access only with in the {} brackets
+if (true) {
+  const c = 30;
+}
+console.log(c); //not accessible
+
+Closure - A function remembers variables from the outer function even after the outer function is done.
+
+

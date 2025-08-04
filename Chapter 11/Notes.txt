@@ -1,0 +1,4 @@
+while Loop
+Definition:
+A while loop continues as long as the condition is true.
+

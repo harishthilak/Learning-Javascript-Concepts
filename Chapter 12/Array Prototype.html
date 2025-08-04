@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>1.Array.prototype.sort()</h2>
+    <script>
+        let bike = ["Royal","Honda","RTR"];
+        bike.sort()
+        console.log(bike);
+
+        let number = [12,34,32,11];
+        number.sort((a,b) => a - b);
+        console.log(number);
+    </script>
+    <h2>2. for each in array</h2>
+    <script>
+        [12,12,34,45].forEach((v,i) => {
+            console.log (` Index ${i} is , ${v}`);
+        })
+        
+    </script>
+    <h2>3. Every () </h2>
+    <script>
+        let name = ["Harish","T"," "];
+        let fullname = name.every( names => names !== " ");
+        console.log(fullname);
+    </script>
+    <h2>4. flat()</h2>
+    <script>
+        let darr = [1,2,3,[4,5],6];
+        
+        console.log(darr.flat());
+    </script>
+    <h2>.flatMap()</h2>
+    <h4> Applies a map function to each element, then flattens the result by one level. </h4>
+    <script>
+        console.log(["King of Europe is Real Madrid"].flatMap( s => s.split(" ")));
+    </script>
+    <h2> Match all </h2>
+    <h4> helps you find all matches of a pattern (using RegEx) in a string, and gives detailed info </h4>
+    <script>
+        const mypeoples = "!Diago dembale !pele Bellingham";
+        const regex = /!\w+/g ;
+
+        const tags = [...mypeoples.matchAll(regex)];
+
+        for (const tag of tags) {
+            console.log(tag[0] ,"is positioned in",tag.index);
+        }
+
+    </script>
+    <h2> arr camp ()</h2>
+    <p> It compares two arrays of primitive values (like numbers or strings) and returns:
+
+true if both arrays are equal in length and all elements are exactly the same and in the same order
+
+false otherwise. Works only for primitives (number, string, boolean, etc.)
+
+Doesn’t work correctly with nested arrays or objects (you’d need a deep comparison for that </p>
+
+   <script>
+    function arrcmp(a, b) {
+  if (a.length !== b.length) return false;
+  return a.every((v, i) => v === b[i]);
+}
+
+    const x = [1,2,3,4];
+    const y = [1,2,3,4];
+    console.log(arrcmp(x,y));
+    const z = [1,2,3,5];
+    console.log(arrcmp(x,z));
+   </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2> Object Literals</h2>
+    <script>
+        function Animal(name){
+            this.name = name;
+        };
+
+        Animal.prototype.sound = function(){
+            return `${this.name} sounds meow`
+        };
+
+        Animal.prototype.eyes = function(){
+            return `${this.name} eyes were gray`
+        };
+
+        const cat = new Animal("Kitty");
+        const owl = new Animal("Owl");
+
+        console.log(cat.sound());
+        console.log(owl.eyes());
+    </script>
+    <h2>Object create</h2>
+    <p> here we create a basecat that has few properties names hunger and eat and now we have new object named kitty we just use object.create(basecat) so that the new object inherits the property of basecat </p>
+    <script>
+        const basecat = {
+            hunger : 1, eat () {
+                this.hunger--;
+            }
+        };
+
+        const kitty = Object.create(basecat);
+        kitty.name = "Tom";
+
+        console.log(kitty.hunger);
+        kitty.eat();
+        console.log(kitty.hunger);
+
+    </script>
+    <h2> Class </h2>
+    <p> All the functions inherits in single class named lion </p>
+    <script>
+        class lion {
+            constructor(name){
+                this.name = name;
+            }
+            role(){
+                console.log(`${this.name} is king of the jungle`);
+            }
+            lifespan(){
+                console.log(`${this.name} lifespan is upto 20 years.`);
+            }
+            habitat(){
+                console.log(`${this.name} lives in South Asia.`);
+            }
+        }
+
+        const Simba = new lion("Simba");
+        console.log(Simba.role());
+        console.log(Simba.habitat());
+        console.log(Simba.lifespan());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

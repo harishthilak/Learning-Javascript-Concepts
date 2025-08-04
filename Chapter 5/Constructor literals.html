@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function RMA(Transfer,Pay){
+            this.Transfer = Transfer;
+            this.Pay = Pay;
+            this.Display = function(){
+                return `Here we go ${this.Transfer} to ${this.Pay} million`;
+            };
+        }
+
+        let player = new RMA("CR7","200");
+        console.log(player.Display());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

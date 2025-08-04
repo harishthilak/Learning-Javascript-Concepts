@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <H2>...Spread</H2>
+    <script>
+        let arr = [1,2,3,4];
+
+        console.log(...arr); // Show output as an individual element
+
+        function add(a,b,c){
+            return a + b + c;
+        }
+
+        let num = [1,2,3];
+        console.log(add(...num));
+
+        function hi(a,b,...rest){
+            console.log("First",a);
+            console.log("second",b);
+            console.log("Rest",rest);
+        }
+
+        let values = [12,13,14,52,34,67];
+        hi(...values);
+    </script>
+</head>
+<body>
+        
+</body>
+</html>

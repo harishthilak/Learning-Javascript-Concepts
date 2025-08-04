@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2> Anonymous Function </h2>
+    <button id ="btn">Click Here</button>
+    <script>
+        document.getElementById("btn").onclick = function(){
+            alert("Try Again");
+        };
+    </script>
+    <h2> Arrow Function </h2>
+    <button id = "click"> Submit </button>
+    <script>
+        const clicked = (e) => {
+            alert ("You clicked at x ="+e.clientX+",y = " +e.clientY);
+
+        };
+
+        document.getElementById("click").onclick = clicked;
+    </script>
+    <script>
+        function player(name = "Messi",arr = [],func = () => "Default"){
+            console.log(name);
+            console.log(arr);
+            console.log(func);
+        }
+
+        function Soccer (){
+            return "Soccer Player"
+        };
+
+        player("messi",[19,10],Soccer());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

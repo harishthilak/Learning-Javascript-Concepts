@@ -1,0 +1,48 @@
+Type Coercion
+
+Type Coercion is JavaScript’s ability to convert a value from one type to another automatically when different types are used in expressions.
+To String , To Number , To Boolean 
+
+1. Coercion to String
+
+toString() or valueOf() is called
+Arrays → [].toString() ➝ ""
+[1, 2] → "1,2"
+Objects → "[object Object]"
+null → "null"
+true → "true"
+
+2. Coercion to Number
+Value	Coerced to Number
+"42"	    42
+true	    1
+false	    0
+null	    0
+undefined	NaN
+"abc"	    NaN
+[]	        0
+[5]	        5
+[1,2]	    NaN
+{}	        NaN
+
+3. Coercion to Boolean
+In conditionals like if, while, ternary, etc.
+Explicit use of Boolean(value)
+
+Only 6 values are falsy: false, 0, -0, 0n, "", null, undefined, NaN
+Everything else is truthy, including: "0" (non-empty string) , [] (empty array) , {} (empty object) , Infinity
+
+Operator Precedence
+
+Precedence	Operator(s)	Associativity
+1	()	Left-to-right
+2	++, --, !, ~	Right-to-left
+3	*, /, %	Left-to-right
+4	+, -	Left-to-right
+5	==, !=, ===	Left-to-right
+6	= (assignment)	Right-to-left
+
+== vs === in JavaScript
+== → Loose equality - It compares values and allows type coercion
+=== → Strict equality - Compares both value and type, No coercion allowed.
+

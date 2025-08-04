@@ -1,0 +1,30 @@
+Step 1: Create an Element
+It creates an empty <div> element in memory.
+It is not yet visible on the webpage.
+
+Step 2: Add Styles to the Element
+Style the element using .style.property in JavaScript.
+Use camelCase for multi-word CSS like background-color → backgroundColor
+position: absolute lets you control its exact position using left and top.
+
+Step 3: Add the Element to the Webpage (DOM)
+Make the element visible by adding it to the HTML page.
+Adds your div to the <body> tag.
+Now it is visible on the screen.
+
+Step 4: Reuse This with a Function
+Write a reusable function to create custom elements with size, color, and position.
+
+Strep 5: Organize Elements with Parent–Child Nesting
+Add one element inside another.
+
+Step 6: Avoid Memory Waste with Prototypes
+When you're creating many similar objects in JavaScript (e.g. 1000 users, products, etc.), you don’t want to waste memory by duplicating the same function for every object.
+Instead, we use:
+Function Constructors to create object templates
+Prototypes to share methods efficiently between all objects
+
+You move the shared function to the prototype of the constructor.
+
+
+

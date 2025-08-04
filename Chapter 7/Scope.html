@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2> Chapter 7 Scope </h2>
+    <script>
+        // Hoisting 
+        console.log(a);
+        var a = 10; //Undefined
+
+        //But this doesn’t happen with let or const
+        
+        //let a = 10; // reference error
+
+        //Global Scope Variable with var
+        var fruit = "mango";
+        console.log(window.fruit);
+
+        //var inside block is hoisted to global
+        {
+        var name = "Harish";
+        }
+        console.log(name); // if we use let and const it will be result as reference error
+
+        //Function Name Hoisting
+        greet(); // ✅ Hello
+
+        function greet() {
+        console.log("Hello");
+        } // Named functions can be used before they are declared:
+
+        //sayHi();
+        //let sayHi = function() {
+             //console.log("Hi");
+            //}; // TypeError: sayHi is not a function because function expressions are NOT hoisted
+
+        //Function Overwriting
+        function win(){
+            console.log("First");
+        }
+
+        function win(){
+            console.log("second");
+        }
+
+        win(); //"second" — latest wins
+
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

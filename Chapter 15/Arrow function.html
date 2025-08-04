@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2> Arrow Function </h2>
+    <h4> Basic arrow function syntax </h4>
+    <script>
+        const fun1 = () => {
+            return 1
+        }
+
+        console.log(fun1());
+
+        const fun2 = () => 1;
+
+        console.log(fun2());
+    </script>
+    <h2> Arrow Functions with Parameters </h2>
+    <p> If only one parameter, you can skip the parentheses: </p>
+    <script>
+        const add = (a,b) => a+b;
+
+        console.log(add(1,2));
+
+        const sum = (a,b) => {
+            return a + b;
+        };
+
+        console.log(sum(2,3));
+
+        const multiply = x => x*x;
+
+        console.log("Only on parameter",multiply(3));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

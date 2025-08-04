@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2> Mouse Concepts </h2>
+    <script>
+        class Mouse {
+            constructor (element) {
+                this.dragging = false;
+                this.memory = { x : 0 , y : 0};
+                this.difference = { x : 0 , y : 0};
+                this.inverse = { x : 0 , y : 0};
+
+                element.addEventListener("mousedown", (e) => {
+                    this.dragging = true;
+                    this.memory = { x: e.clientX , y : e.clientY };
+                });
+
+                element.addEventListener("mousemove", (e) => {
+                    if(this.dragging){
+                        this.difference = {
+                            x: e.clientX - this.memory.x,
+                            y: e.clientX - this.memory.y
+                        };
+
+                    this.inverse = {
+                        x: Math.min(this.memory.x, e.clientX),
+                        y: Math.min(this.memory.y, e.clientY),
+                    };
+                }
+                });
+
+
+            const mouse = new Mouse(document.body);
+            
+
+            };
+        }; 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

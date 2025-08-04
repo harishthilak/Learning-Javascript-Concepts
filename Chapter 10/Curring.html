@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Currying </title>
+    <h2> Currying is a technique of evaluating functions with multiple arguments, one at a time. </h2>
+    <script>
+        function greet(name){
+            return function(message){
+                return `${message},${name}`
+            };
+        };
+        
+        let person = greet("Harish");
+        console.log(person("Here we go"));
+
+        const Madrid = Na => Msg => `${Na},${Msg}`;
+
+        console.log(Madrid("Harish")("You are welcome"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

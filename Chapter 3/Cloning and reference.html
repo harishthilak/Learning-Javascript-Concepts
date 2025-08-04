@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a = 20;
+        let b = a;
+        
+        a = 10;
+
+        console.log(b); //copy value
+
+        let c = {name:"harish"};
+        let d = c;
+        c.name = "Hari";
+
+        console.log(d.name); //copy reference
+
+        let arr1 = [1,2,3];
+        let arr2 = {...arr1};
+
+        arr1 = [2,3,4];
+
+        console.log(arr2);
+        console.log(arr1);//Cloning
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

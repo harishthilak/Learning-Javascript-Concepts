@@ -1,0 +1,10 @@
+Events
+Browser Events
+What are Browser Events?
+Browser events are actions that automatically happen in the browser when:
+You click
+Move the mouse
+Press a key
+Resize the window
+Submit a form
+Load the page

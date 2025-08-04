@@ -1,0 +1,37 @@
+ 13.1 Functions in JavaScript
+ Regular (ES5): Defined using function keyword.
+  - Can be called or used as an object constructor with new.
+  - Inside, the this keyword refers to:The execution context (e.g. window) in normal calls, or The new object instance when used with new.
+ Arrow Functions (ES6+): Defined as () => {}.
+  - Cannot be used as constructors (cannot use new).
+  - Lexically bind this (inherits from the surrounding scope).
+  - No arguments object—so use rest ...args if needed.
+
+Function Anatomy
+  function update(a, b, c) {
+  // function body
+  return value;
+}
+
+13.1.2 Anonymous Functions
+  Functions without names.
+  Often used inline as callbacks:
+
+Function Parameters
+
+Optional but often used.
+You can pass primitives, arrays, objects, and even other functions.
+
+This keyword
+this refers to the object that is executing the function.
+With new keyword:
+
+function Person(name) {
+  this.name = name;
+}
+
+const p = new Person("Harish");
+console.log(p.name); // "Harish"
+this refers to the new object being created by new.
+
+

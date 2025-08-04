@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2> for.....of loop </h2>
+    <h4>for...of is used to iterate over iterable objects like arrays and strings.</h4>
+    <script>
+        let arr = [1,2,3,4,5];
+        for (let val of arr){
+            console.log(val);
+        }
+    </script>
+    <h2> for...in Loop </h2>
+    <h4> for...in is used to iterate over the keys (properties) of an object. </h4>
+    <script>
+        let obj = {a:1,b:2};
+        for (let key in obj){
+            console.log(key,obj[key]);
+        }
+    </script>
+    <h2>forEach Loop (Array Method)</h2>
+    <h4> Definition: A higher-order function that executes a provided function once for each array element.</h4>
+    <script>
+        let money = [10,20,30];
+        money.forEach(cash => console.log(cash));
+    </script>
+    <h2> .map() Method </h2>
+    <h4>Creates a new array by applying a function to each element.</h4>
+    <script>
+        let tab1 = [1,2,3,4,5];
+        let tab2 = tab1.map(num => num * 2);
+        console.log(tab2); 
+    </script>
+    <h2> .filter() Method </h2>
+    <h4> Definition:
+Returns a new array with elements that match a condition.</h4>
+     <script>
+        let no = [1,2,3,4,5,6,7,8,9];
+        let num2 = no.filter(ta2 => ta2 % 2 == 0);
+        console.log(num2);
+     </script>
+     <h2> Labeled Break </h2>
+     <h4> Labels let you break or continue out of outer loops. </h4>
+     <script>
+        outer:
+        for (let x = 0; x <3;x++){
+            inner:
+            for (let y = 0; y<3;y++){
+                if (y == 1) break inner;
+                console.log(x,y);
+            }
+        }
+     </script>
+</head>
+<body>
+    
+</body>
+</html>

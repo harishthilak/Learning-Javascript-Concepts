@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2> Creating a Custom map() Function </h2>
+    <script>
+        function addone(n){
+            return n + 1;
+        };
+
+        function customap(arr,callback){
+            const copy = [];
+
+            for (let i=0;i<arr.length;i++){
+                const og = arr[i];
+                const modified = callback(og);
+                copy.push(modified);
+            }
+            return copy;
+        }
+
+        const ogarr = [1,2,3];
+        const op = customap(ogarr,addone);
+
+        console.log("Original array",ogarr);
+        console.log("Modified Array",op);
+
+        const num = [2,4,6];
+        const odd = num.map(addone);
+
+        console.log("Original Num",num);
+        console.log("Odd of Num",odd);
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

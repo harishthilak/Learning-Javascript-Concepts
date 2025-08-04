@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>Basic closure function</h2>
+    <script>
+        function outer(){
+            let counter = 0;
+
+            return function inner(){
+                counter++;
+                console.log(counter);
+            };
+        };
+
+        let display = outer();
+
+        display();
+        display();
+        display();
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

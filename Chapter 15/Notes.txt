@@ -1,0 +1,42 @@
+Arrow Functions DO NOT Have Their Own this
+Concept:
+Arrow functions do not create their own this.
+They inherit this from their outer (lexical) scope.
+
+Arrow functions don’t have their own this.
+They use the this from the place where they were defined, not where they are used.
+
+In classic function → this depends on how the function is called.
+In arrow function → this depends on where the function was defined.
+
+Arrow Functions DO NOT Have Their Own arguments Object
+Classic functions have a special built-in object called arguments, which is an array-like object containing all passed arguments.
+function test() {
+  console.log(arguments);
+}
+test(1, 2, 3); // Output: [1, 2, 3]
+
+const test = () => {
+  console.log(arguments); // ❌ ReferenceError
+};
+
+test(1, 2, 3);
+Arrow functions do not have their own arguments.
+If you try to access it, you'll get a ReferenceError.
+
+Alternative:
+ const test = (...args) => {
+    console.log(args);
+ };
+
+ test(2,3,4); /output:(2,3,4)
+
+Arrow Functions CANNOT Be Used as Constructors
+const Person = (name) => {
+  this.name = name;
+};
+
+const p = new Person("Alex"); // ❌ TypeError
+
+They don’t have their own this and cannot construct objects.
+They are not constructors.

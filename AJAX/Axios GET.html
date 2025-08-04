@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.11.0/dist/axios.min.js
+"></script>
+    <button onclick="getpost()"> Click Here </button>
+    <button onclick="Newpost()"> New post</button>
+    <button onclick="Updatepost()"> Updated post </button>
+    <div id="output"></div>
+    <script>
+        function getpost(){
+            axios.get("https://jsonplaceholder.typicode.com/comments")
+            .then(response => {
+                const comments = response.data;
+                document.getElementById("output").innerHTML = comments.slice(0,5).map(comment => `<h3>${comment.name}</h3>
+                <h6>${comment.email}</h6>
+                <p>${comment.body}</p>`).join(" ");
+            }).catch(error => {
+                console.error("Fetching Failed");
+            })
+
+        }
+    </script>
+    <script>
+        const newmail = {
+            postId: 1,
+            id: 1,
+            name: "Wilton Churcil",
+            email : "willchur@gmail.com",
+            body : "Here we create a id named wilton and we going to post that"
+        };
+        function Newpost(){
+        axios.post("https://jsonplaceholder.typicode.com/comments",newmail)
+        .then(response => {
+            //console.log("New Post Added",response.data);
+            const np = response.data;
+            document.getElementById("output").innerHTML = `
+                    <h3>${np.name}</h3>
+                    <p><strong>Email:</strong> ${np.email}</p>
+                    <p><strong>Body:</strong> ${np.body}</p>
+                `;
+            console.log("New POst",response.data);
+        }).catch(error => {
+            console.error("Failed",error);
+        });
+    }
+    </script>
+    <script>
+        const editpost = {
+            postId: 1,
+            id: 1,
+            name: "Sir Wilton Churcil",
+            email : "wilchurcil@gmail.com",
+            body : "Now we updated what we posted"
+        };
+        function Updatepost(){
+            axios.put("https://jsonplaceholder.typicode.com/comments/1",editpost)
+            .then(response => {
+                const edpost = response.data;
+                document.getElementById("output").innerHTML = `
+                <h3>${edpost.name}</h3>
+                <p><strong>Email:</strong>${edpost.email}</p>
+                <p><strong>Email:</strong>${edpost.body}</p>
+                `;
+                console.log("Updated Post",edpost);
+            }).catch(error => {
+                console.error("Not Updated!");
+            });
+        }
+    </script>
+</body>
+</html>

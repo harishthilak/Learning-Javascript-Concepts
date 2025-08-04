@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>Class</h2>
+    <p> let us take a real time example as ingredient </p>
+    <script>
+        class ingredient {
+            constructor (name,type,calories){
+                this.name = name;
+                this.type = type;
+                this.calories = calories;
+            };
+        static vegetable = "Vegetable";
+        static fruits = "fruits";
+        static meat = "meat";
+        static spice = "spice";
+        static desert = "desert"
+        }
+
+        const grapes = new ingredient("Grapes",ingredient.fruits,10);
+        const chicken = new ingredient("Chicken",ingredient.meat,20);
+
+        console.log(grapes);
+        console.log(chicken);
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

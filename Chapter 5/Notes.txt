@@ -1,0 +1,2 @@
+Primitive Types in JavaScript
+Boolean - True or False 

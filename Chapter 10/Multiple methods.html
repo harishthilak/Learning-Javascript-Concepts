@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2> Multiple methods</h2>
+    <script>
+        function attendance(){
+            let students = 0;
+
+            return {
+                set(val){ students++},
+                increase(){ students++},
+                decrease(){ students--},
+                print(){console.log("Current Strength",students); },
+
+
+
+        };
+
+        let f = attendance();
+        f.set(50);
+        f.increase(5);
+        f.print();
+        f.decrease(2);
+        f.print();
+    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

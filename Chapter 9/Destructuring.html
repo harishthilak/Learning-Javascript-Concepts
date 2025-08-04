@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2> Destructuring </h2>
+    <script>
+        let numbers = [12,18,123];
+        let [a,b,c] = numbers;
+
+        console.log(c);
+        console.log(b);
+        console.log(a ); // Array Destructuring
+
+        let [ , second,first] = [23,45,49];
+        console.log(first);
+        console.log(second); // skipping items
+
+        //Object Destructuring
+        let user = { name : "dhoni", age : 42};
+        let {name,age} = user;
+
+        console.log(name);
+
+        // renaming keys
+        let {name : username, age : Age} = user;
+
+        console.log(username);
+
+        // Nested Object Destructuring
+
+       let company = {
+        employee : {
+            names : "Harish",
+            skills : {
+                primary : "JS", Seconddary : "PY"
+            }
+
+        }
+       };
+
+       let {
+        employee : {
+            names,
+            skills: {primary}
+        }
+
+       } = company;
+
+       console.log(names);
+       console.log(primary);
+       
+
+
+     
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

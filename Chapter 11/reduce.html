@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>.reduce() Method </h2>
+    <h4> .reduce() is a higher-order method used to reduce an array to a single value by executing a callback on each element, while carrying over an accumulator. </h4>
+    <script>
+        let arr = [1,2,3,4,5,6];
+        let sum = arr.reduce((acc,curr) => acc + curr,0);
+        console.log(sum);
+
+        let num = [12,23,45,34,56];
+        let max = num.reduce((acc,curr) => (curr > acc ? curr : acc),num[0] );
+        console.log(max);
+    </script>
+    <h2> Map and sort </h2>
+    <script>
+        let arry = [2,5,1];
+
+        let sorted = arry.map((v,i) => ({v ,i}))
+        .sort((a,b) => a.v.localeCompare(b.v));
+
+        for (let {v,i} of sorted){
+            console.log({v,i});
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

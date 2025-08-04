@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2> What is prototype </h2>
+    <p> function human(name){}; <br>
+        console.log(typeof human); <br>
+        console.log(typeof human.prototype); </p>
+    <script>
+        function human(name){};
+        console.log(typeof human);
+        console.log(typeof human.prototype);
+
+
+    </script>
+    <h2> Object Literals </h2>
+    <p> Even plain objects (created via {}) secretly use Object.prototype.<br> console.log(Object.getPrototypeOf(cat) === Object.prototype) </p>
+    <script>
+        const cat = {name : "Tom"};
+        console.log(typeof cat);
+        console.log(Object.getPrototypeOf(cat) === Object.prototype)
+
+    </script>
+    <h2> Prototype Chain </h2>
+    <p> In this chain it shows the link between each first of all const monkey = new Animal("Speed"); monkey object inherits animal prortotype and animal functon inherits object prototype and form a chain </p>
+    <script>
+        function Animal(name){
+            this.name = name;
+        };
+
+        Animal.prototype.speak = function(){
+            return `${this.name} makes a sound`
+        };
+
+        const monkey = new Animal("Speed");
+
+        console.log(monkey.__proto__ === Animal.prototype);
+        console.log(monkey.speak());
+        console.log(Animal.prototype.__proto__ === Object.prototype);
+
+    </script>
+    <h2> Method Lookup </h2>
+    <script>
+        const arr = [1,2,3];
+        console.log(arr.toString());
+    </script>
+    <h2> Inherit method </h2>
+    <p> bike function is a parent class and it has prototype with function names sound and now we create a new function acts as a child class named gear that inherits the name of the parent function by using .call and inherits the prototype by using object.create and now the child class inherits tha parent class prototype</p>
+    <script>
+        function bike(name){
+            this.name = name;
+        };
+
+        bike.prototype.sound = function(){
+            return `${this.name} sounds good.`
+        };
+
+        function Gear(name){
+            bike.call(this,name);
+        };
+
+        Gear.prototype = Object.create(bike.prototype);
+        Gear.prototype.constructor === Gear;
+
+        Gear.prototype.num = function(){
+            return `${this.name} has 6 gears`
+        };
+
+        const motor = new Gear("RE");
+
+        console.log(motor.sound());
+        console.log(motor.num());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

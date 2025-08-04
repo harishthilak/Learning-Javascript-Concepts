@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2> Set Interval and Clear Interval </h2>
+    <button id = "Start"> Start Button </button>
+    <button id = "Stop"> Stop Button </button>
+
+    <p id = "Output"></p>
+
+    <script>
+        let count = 0;
+        let intervalId;
+
+        document.getElementById("Start").addEventListener("click",() => {
+            intervalId = setInterval (() => {
+                count ++;
+                document.getElementById("Output").innerText = "Counting is " + count;
+                console.log("Count :",count);
+            },3000);
+            console.log("Counter Started ");
+        });
+
+        document.getElementById("Stop").addEventListener("click",() => {
+            clearInterval(intervalId);
+            console.log("Counting Stopped");
+            alert("Counting is stopped");
+
+        })
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

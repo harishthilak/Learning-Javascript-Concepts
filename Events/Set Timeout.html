@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2> Set time out and Clear time out </h2>
+    <button id = "Start"> Start Button </button>
+    <button id = "Stop"> Stop Button </button>
+
+    <script>
+        let timer; //variable decleration
+
+        document.getElementById("Start").addEventListener("click",() => {
+            timer = setTimeout(() => {
+                alert("Timer of 5 sec finished");
+                
+            },5000
+            );
+            console.log("Set Timer for 5sec");
+        })
+
+        document.getElementById("Stop").addEventListener("click",() => {
+            clearTimeout(timer);
+            console.log("Timer is cleared");
+            alert("Timer was stopped");
+        });
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

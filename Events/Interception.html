@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2> Interception </h2>
+    <button id ="Button">Click Here</button>
+    <script>
+        window.onload = () => alert("windows Loaded Successfully");
+
+        const btn = document.querySelector("#Button");
+        btn.onclick = () => console.log("Button is Clicked!")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

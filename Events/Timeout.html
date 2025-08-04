@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>setTimeout Example</title>
+</head>
+<body>
+  <button id="start">Start Timer</button>
+  <button id="stop">Stop Timer</button>
+
+  <script>
+    let timer;
+
+    document.getElementById("start").addEventListener("click", () => {
+      timer = setTimeout(() => {
+        alert("Timer finished after 3 seconds!");
+      }, 3000);
+    });
+
+    document.getElementById("stop").addEventListener("click", () => {
+      clearTimeout(timer);
+      alert("Timer was stopped before it finished!");
+    });
+  </script>
+</body>
+</html>

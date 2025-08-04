@@ -1,0 +1,15 @@
+Higher-Order Functions (HoFs) — Simplified
+
+Definition:
+A higher-order function is a function that either:
+Takes another function as a parameter, or
+Returns a function.
+
+Why Use Higher-Order Functions?
+Abstraction: Hides repetitive logic (like loops) and lets us focus on the task, not the mechanics.
+Clean code: Shorter, more readable, and maintainable.
+Reusability: Write functions that can be reused with different behaviors.
+
+Use .map() when transforming each item in an array.
+Use .filter() when selecting specific items.
+Use .reduce() when combining values into one.

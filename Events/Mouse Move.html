@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2> Mouse Move </h2>
+    <div id ="btn" style="width: 50px;height: 50px;color: blueviolet;"></div>
+    <script>
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener("mousemove",(event) => {
+            btn.textContent = `Mouse at ${event.clientX},${event.clientY}`;
+        });
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

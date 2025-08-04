@@ -1,0 +1,45 @@
+12.0.3 .every()
+
+Checks if every element meets a condition.
+
+Returns true if all pass; otherwise false.
+Stops on the first false condition.
+
+12.0.4 .some()
+
+Checks if at least one element meets a condition.
+
+Returns true if one passes; otherwise false.
+Stops on the first true evaluation.
+
+12.0.5 .filter()
+
+Definition: Returns a new array of items that satisfy a condition.
+
+Leaves the original array unchanged
+[1, 5, 10].filter(n => n < 10); // [1, 5]
+
+12.0.8 Practical Use Cases for Reducer
+
+Update object properties selectively—for example, update only one field (like vehicle price) without copying entire objects.
+Count occurrences, aggregate statistics, or narrow data efficiently within large datasets.
+
+12.0.10 .flat()
+Definition: Flattens nested arrays up to specified depth.
+
+12.0.11 .flatMap()
+Definition: Applies a map function to each element, then flattens the result by one level.
+
+What is .matchAll()?
+Definition in Simple Words:
+.matchAll() helps you find all matches of a pattern (using RegEx) in a string, and gives detailed info like:
+What was matched
+Where it was found (index)
+Any parts you captured (capture groups)
+It's like .match() but more powerful — especially useful when you're matching multiple parts and want more info.
+
+12.0.14 Comparing Objects
+
+Primitive types (1 === 1) work well with ===.
+But comparing two objects (or arrays) requires custom logic—because objects compare by reference, not value.
+

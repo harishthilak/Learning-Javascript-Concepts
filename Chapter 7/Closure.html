@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2> Closures </h2>
+    <script>
+        function counting(){
+            let count = 0;
+            return function(){
+                count ++;
+                return count;
+            }
+        }
+
+        let number = counting();
+
+        console.log(number());
+        console.log(number());
+        console.log(number());
+        console.log(number());
+        console.log(number());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

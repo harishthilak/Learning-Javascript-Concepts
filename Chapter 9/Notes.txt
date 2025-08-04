@@ -1,0 +1,27 @@
+...rest Parameters
+The ...rest syntax gathers remaining arguments into a single array.
+Used in function parameter lists.
+Only allowed as the last parameter.
+Collect remaining
+Function parameters
+Creates an array
+Must be last param
+
+...spread Syntax
+Opposite of ...rest.
+Breaks an array/object into individual elements or properties.
+	Expand values
+    Arrays, function calls
+    Unpacks an array/object
+    Can be anywhere
+
+Destructuring Assignment
+Destructuring is a syntactic sugar for unpacking values from arrays, objects, or nested structures into distinct variables.
+Instead of accessing values like this:
+let arr = [1, 2, 3];
+let a = arr[0];
+let b = arr[1];
+We can do this:
+let [a, b] = arr;
+
+2. Array Destructuring

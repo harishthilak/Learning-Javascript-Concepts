@@ -1,0 +1,86 @@
+Dynamic Import
+import('./path/to/module.js')
+  .then(module => {
+    // use exported functions/objects here
+    module.functionName();
+  })
+  .catch(error => {
+    console.error("Module failed to load:", error);
+  });
+
+Strict Mode
+"use strict"; - Add this at the top of JS file 
+for function we used this inside the function
+Prevents Use of Undeclared Variables - Without strict mode, this would silently create a global variable x.
+Disallows Deleting Variables, Functions, or Objects - Without strict mode, delete returns false silently.
+Makes this in Functions undefined (not window) - Without strict mode, this would refer to the global object (window in browsers).
+Prevents Duplicates in Function Parameters
+Blocks Using Reserved Keywords (like let, class, static)
+
+Literal Values
+A literal is a direct hardcoded value in your code — not stored in a variable, not returned from a function. ex... number,string,object,boolean,function and etc
+
+Combining Literals Using Operators
+console.log(5 + 2);        // ➝ 7 (Number + Number)
+console.log("Hi " + "Harish"); // ➝ "Hi Harish" (String + String)
+console.log("5" + 2);      // ➝ "52" (String + Number → coerced to String)
+
+Object and Array Literals
+Array Literal: []
+Object Literal: {}
+
+let arr = [1, 2, 3];
+let obj = { name: "Harish", age: 21 };
+
+typeof Operator
+Use typeof to find the type of a value:
+
+typeof 1;            // ➝ "number"
+typeof "Hello";      // ➝ "string"
+typeof {};           // ➝ "object"
+typeof [];           // ➝ "object" (✅ it's an array, but JS calls it object)
+typeof null;         // ➝ "object" (weird but true — a historical bug)
+typeof undefined;    // ➝ "undefined"
+
+How to Check if It's an Array?
+let value = [1, 2, 3];
+console.log(Array.isArray(value)); 
+
+Pass by Reference
+When you assign an object or array to another variable, JavaScript does not create a new copy.
+Instead, it creates a reference (a pointer) to the same memory location.
+So if you change one, the other also reflects that change — because they both refer to the same object.
+
+Number, String, Boolean	- by value	- Changing one doesn't affect the other
+Object, Array, Function	- by reference	- Changing one does affect the other
+
+How to Make a Real Copy (Cloning)
+If you want to make an actual copy (not a reference), you must manually clone the object:
+let x = { p: 1 };
+let y = { ...x };  // spread operator = copy
+
+x.p = 2;
+console.log(y.p); // Output: 1  — it's a separate object
+
+Scope Quirks
+Quirk 1: let/const inside functions vs. global variable
+If you have a global variable and then use let or const to declare the same variable name inside a function, it doesn't fall back to the global one — even before the local one is declared.
+Instead, it causes a ReferenceError, because of something called the "Temporal Dead Zone" (TDZ).
+
+ Don’t redeclare variables inside functions with the same name as globals, unless necessary.
+
+Quirk 2: var attaches to window / this, but let/const don't
+In the global scope, variables declared with var become properties of the window object (in browsers).
+But let and const do not — they stay in a separate script scope.
+
+var x = 10;
+let y = 20;
+const z = 30;
+
+console.log(window.x); // 10 
+console.log(window.y); // undefined 
+console.log(window.z); // undefined 
+
+if you're trying to access variables dynamically from the global scope (e.g., window["x"]), you’ll only get var variables — not let or const.
+
+Also, if you're writing global code that needs to be "clean" and not pollute window, you should use let and const.

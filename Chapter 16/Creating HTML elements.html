@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2> Create an Element </h2>
+    <script>
+        const div = document.createElement("div");
+
+        div.style.width = "100px";
+        div.style.backgroundColor = "Sky blue";
+        div.style.position = "absolute";
+        div.style.left = "50px";
+
+        document.body.appendChild(div);
+
+        function custom(w="100px",h="150px",color="Black",poition="Centre",lft = "50px"){
+            const sample = document.createElement("div");
+            sample.style.width = w;
+            sample.style.height = h;
+            sample.style.backgroundColor = color;
+            sample.style.position = poition;
+            sample.style.left = lft;
+            return sample;
+        };
+
+        const dad = custom(w="70px",h="300px",color="Brown",poition="centre",lft="20px");
+        const child = custom(w="50px",h="150px",color="Green",poition="centre",lft="100px");
+
+        dad.appendChild(child);
+        document.body.appendChild(dad);
+
+        function season(name) {
+            this.name = name;
+        };
+
+        season.prototype.getname = function(){
+            return this.name
+        };
+
+        const summer = new season("Summer");
+        const winter = new season("winter");
+
+        console.log(summer.getname());
+        console.log(winter.getname());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
